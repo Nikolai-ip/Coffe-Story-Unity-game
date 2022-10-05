@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-05T15:33:21.432Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="uY-UDIz1O_kA5OrO0hXe" version="20.4.0" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-10-05T15:35:33.665Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="_cxGi7b03rBmQl9kF8GC" version="20.4.0" type="github" pages="4">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Use-case">
     <mxGraphModel dx="1483" dy="827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -179,7 +179,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="HnUnrX7rn5Hr6e7uyCX0" name="Диаграмма последовательностей">
-    <mxGraphModel dx="1483" dy="827" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2076" dy="1158" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -235,12 +235,6 @@
               <mxPoint x="410" y="145" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="wieTnfwfSt6Gf1IbfCgy-2" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
-          <mxGeometry x="200" y="485" width="230" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="wieTnfwfSt6Gf1IbfCgy-3" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Если найдена сохраненная ига:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp;-загрузить сцену с игрой&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;иначе&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; -инициализировать GUI&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="520" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-6" value="&amp;nbsp;LoadNewGame()" style="endArrow=classic;html=1;rounded=0;entryX=0.957;entryY=0.18;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.014;exitY=0.587;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="wieTnfwfSt6Gf1IbfCgy-5" target="wieTnfwfSt6Gf1IbfCgy-38">
           <mxGeometry y="1" width="50" height="50" relative="1" as="geometry">
@@ -336,9 +330,6 @@
             <mxPoint x="830" y="339.64" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wieTnfwfSt6Gf1IbfCgy-30" value="??" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="10" width="120" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-31" value="LoadGameWithRecorders()" style="endArrow=classic;html=1;rounded=0;exitX=-0.043;exitY=0.908;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.976;entryY=0.663;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wieTnfwfSt6Gf1IbfCgy-5" target="wieTnfwfSt6Gf1IbfCgy-38">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="860" y="600" as="sourcePoint" />
@@ -380,12 +371,12 @@
         </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-39" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="wieTnfwfSt6Gf1IbfCgy-38">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="715" y="860" as="sourcePoint" />
+            <mxPoint x="715" y="740" as="sourcePoint" />
             <mxPoint x="715" y="60" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-40" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=cross-hatch;" vertex="1" parent="1">
-          <mxGeometry x="525" y="450" width="485" height="230" as="geometry" />
+          <mxGeometry x="620" y="450" width="310" height="230" as="geometry" />
         </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-41" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="wieTnfwfSt6Gf1IbfCgy-40" target="wieTnfwfSt6Gf1IbfCgy-40">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -394,13 +385,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wieTnfwfSt6Gf1IbfCgy-42" value="alt" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;" vertex="1" parent="1">
-          <mxGeometry x="525" y="450" width="105" height="50" as="geometry" />
+          <mxGeometry x="620" y="450" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="wieTnfwfSt6Gf1IbfCgy-44" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=230.00000000000003;exitDy=65;exitPerimeter=0;" edge="1" parent="1" source="wieTnfwfSt6Gf1IbfCgy-2" target="wieTnfwfSt6Gf1IbfCgy-40">
+        <mxCell id="wieTnfwfSt6Gf1IbfCgy-44" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=230;exitDy=30;exitPerimeter=0;" edge="1" parent="1" source="wieTnfwfSt6Gf1IbfCgy-2" target="wieTnfwfSt6Gf1IbfCgy-40">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="380" y="400" as="sourcePoint" />
             <mxPoint x="430" y="350" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="wieTnfwfSt6Gf1IbfCgy-2" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Если найдена сохраненная ига:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp;-загрузить сцену с игрой&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;иначе&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; -инициализировать GUI&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+          <mxGeometry x="330" y="480" width="230" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
