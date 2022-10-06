@@ -1,0 +1,2 @@
+H:\Common\Конструирование ПО\UML\UML\obj\Debug\UML.csproj.AssemblyReference.cache
+H:\Common\Конструирование ПО\UML\UML\obj\Debug\UML.csproj.CoreCompileInputs.cache
