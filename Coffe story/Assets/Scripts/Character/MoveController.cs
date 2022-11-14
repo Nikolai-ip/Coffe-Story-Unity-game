@@ -1,22 +1,26 @@
-using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent (typeof(Rigidbody2D))]
-[RequireComponent(typeof(AnimatorController))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
 {
     private Rigidbody2D _rb;
-    private AnimatorController _animations;
     [SerializeField] private float _speedX;
     [SerializeField] private float _speedY;
-    void Start()
+    private InputController _inputController;
+
+    private void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();  
-        _animations = GetComponent<AnimatorController>();
+        _rb = GetComponent<Rigidbody2D>();
+        _inputController = GetComponent<InputController>();
     }
 
-    public void Move(Vector2 move)
+    private void FixedUpdate()
     {
-        _rb.velocity = new Vector3(move.x * _speedX, move.y* _speedY, 0);
+        Move();
+    }
+
+    private void Move()
+    {
+        _rb.velocity = new Vector3(_inputController.GetX * _speedX, _inputController.GetY * _speedY, 0);
     }
 }
