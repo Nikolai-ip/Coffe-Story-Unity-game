@@ -1,5 +1,4 @@
 using UnityEngine;
-
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
 {
@@ -23,4 +22,5 @@ public class MoveController : MonoBehaviour
     {
         _rb.velocity = new Vector3(_inputController.GetX * _speedX, _inputController.GetY * _speedY, 0);
     }
+    
 }

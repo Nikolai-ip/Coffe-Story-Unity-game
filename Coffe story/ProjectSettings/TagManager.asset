@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - VisitorSpawnStartPosition
+  - Spot
+  - CoffeMachineWindow
+  - GoCoffeButton
   layers:
   - Default
   - TransparentFX
@@ -43,4 +47,10 @@ TagManager:
     locked: 0
   - name: Food
     uniqueID: 2551447113
+    locked: 0
+  - name: Visitor
+    uniqueID: 2493999217
+    locked: 0
+  - name: UI
+    uniqueID: 2814489053
     locked: 0
