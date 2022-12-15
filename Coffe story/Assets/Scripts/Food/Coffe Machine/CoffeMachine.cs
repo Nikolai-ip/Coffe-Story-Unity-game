@@ -1,4 +1,5 @@
 using Assets.Scripts.Food.Coffe_Machine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,45 +7,46 @@ using UnityEngine;
 public class CoffeMachine : MonoBehaviour
 {
     private CoffeMachineWindow _window;
-    private InputController _inputController;
     private bool _coffeMachinIsUsing = false;
-    private CoffeList _coffeComponentsList = new CoffeList();
+    private CoffeComponents _coffeComponents = new CoffeComponents();
     [SerializeField] private GameObject _coffePrefab;
     [SerializeField] private Transform _createCoffePoint;
+    [SerializeField] private GameObject _cupOfCoffePrefab;
 
     private void Start()
     {
         _window = GetComponent<CoffeMachineWindow>();
-        _inputController = FindObjectOfType<InputController>();
     }
-    private void Update()
+    public void PourCoffeComponent(CoffeComponent component)
     {
         if (_coffeMachinIsUsing)
         {
-            Cooking();
+            _coffeComponents.Add(component);
+            _window.SetPourAnimation(component);
         }
-    }
-    private void Cooking()
-    {
-        if (_inputController.IsPourMilkButtonPressed)
-        {
-            _coffeComponentsList.Add(CoffeComponent.Milk);
-            _window.SetPourMilkAnimation();
-        }
-        if (_inputController.IsPourExpressoButtonPressed)
-        {
-            _coffeComponentsList.Add(CoffeComponent.Expresso);
-            _window.SetPourExpressoAnimation();
-        }
-        if (_inputController.IsPourWaterButtonPressed)
-        {
-            _coffeComponentsList.Add(CoffeComponent.Water);
-            _window.SetPourWaterAnimation();
-        }
-        
+
     }
     public void CreateCoffe()
     {
+        try
+        {
+            TryToCreateCoffe();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+
+    }
+    private void TryToCreateCoffe()
+    {
+        if (_coffeMachinIsUsing)
+        {
+            var coffe = Instantiate(_coffePrefab);
+            coffe.GetComponent<Coffe>().PourAllComponents(_coffeComponents);
+            _coffeComponents.Clear();
+            EndCooking();
+        }
     }
 
     public void StartCooking()
@@ -54,8 +56,11 @@ public class CoffeMachine : MonoBehaviour
     }
     public void EndCooking()
     {
+        if (_coffeMachinIsUsing)
+        {
+            _window.CloseCoffeMachineWindow();
+        }
         _coffeMachinIsUsing = false;
-        _window.CloseCoffeMachineWindow();
     }
    
 }

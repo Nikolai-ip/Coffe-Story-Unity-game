@@ -1,3 +1,5 @@
+using Assets.Scripts.Food.Coffe_Machine;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class InputController : MonoBehaviour
@@ -12,11 +14,13 @@ public abstract class InputController : MonoBehaviour
         Take,
 
     }
+    protected Dictionary<string, CoffeComponent> _coffeComponentKeys = new Dictionary<string, CoffeComponent>()
+    {
+        {"1",CoffeComponent.Milk },
+        {"2",CoffeComponent.Esspresso },
+        {"3",CoffeComponent.Water },
+    };
     public abstract float GetX { get; }
     public abstract float GetY { get; }
     public abstract bool GetUseButtonIsPressed { get; }
-    public abstract bool IsPourMilkButtonPressed { get; }
-    public abstract bool IsPourExpressoButtonPressed { get; }
-    public abstract bool IsPourWaterButtonPressed { get; }
-    public abstract bool IsTakeButtonPressed { get; }
 }

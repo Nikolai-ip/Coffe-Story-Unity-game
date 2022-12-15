@@ -2,12 +2,12 @@
 
 public class OrderGenerator
 {
-    public Food GetRandom(int foodsCount)
+    public FoodType GetRandom(int foodsCount)
     {
-        return (Food)(new Random().Next(0, foodsCount));
+        return (FoodType)(new Random().Next(0, foodsCount));
     }
-    public Food GetCertain(int foodIndex)
+    public FoodType GetCertain(int foodIndex)
     {
-        return (Food)foodIndex;
+        return (FoodType)foodIndex;
     }
 }

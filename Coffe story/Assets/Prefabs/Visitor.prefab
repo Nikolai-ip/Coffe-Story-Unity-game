@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 551838356005618330}
   - component: {fileID: 2886335455806942282}
   - component: {fileID: 2903767136673577006}
+  - component: {fileID: 2220465501138545989}
   m_Layer: 0
   m_Name: Visitor
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1800968079
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 11f34df4627914d48b3a44ac32524262, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveDuration: 2
+  _destroyTime: 4
 --- !u!114 &2903767136673577006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +114,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b8e9b5478781445bb28346692ba70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _foodCount: 0
+--- !u!114 &2220465501138545989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551838356005618329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c0f7ef5d3c85446ae8d51a56299632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4008110890643137989
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,5 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderTablePrefabs:
-  - {fileID: 6464734800682537325, guid: 2ba4486ffc801d848b0453a4c353df98, type: 3}
-  - {fileID: 4129021794695907042, guid: 41ab7a0e040f40f4e8976dc93ded127c, type: 3}
+  - {fileID: 6515593697648359106, guid: ce40cd4ab9fe30341b4d1557ddd1bc50, type: 3}
+  - {fileID: 1828751140042346177, guid: 84349a043821f30469eb0072ea87e669, type: 3}
+  - {fileID: 6672203266221094842, guid: 1102c61d833721b44b2d787c4c15bcbe, type: 3}
+  - {fileID: 4634056143686982399, guid: 258a96817ccad1049b6105c7a4f06997, type: 3}

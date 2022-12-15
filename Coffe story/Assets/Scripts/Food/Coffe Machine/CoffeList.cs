@@ -4,19 +4,36 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts.Food.Coffe_Machine
 {
-    public class CoffeList:IEnumerable
+    public class CoffeComponents:IEnumerable
     {
-        private List<CoffeComponent> _coffe = new List<CoffeComponent>();
-        public void Add(CoffeComponent component)
+        private List<CoffeComponent> _coffeComponents = new List<CoffeComponent>();
+        public int Count { get { return _coffeComponents.Count; } }
+        public void Add(params CoffeComponent[] components)
         {
-            _coffe.Add(component);
+            foreach (var component in components)
+            {
+                _coffeComponents.Add(component);
+            }
+        }
+        public CoffeComponents Copy()
+        {
+            CoffeComponents copy = new CoffeComponents();
+            foreach (var component in _coffeComponents)
+            {
+                copy.Add(component);
+            }
+            return copy;
+        }
+        public void Clear()
+        {
+            _coffeComponents.Clear();
         }
         public override bool Equals(object obj)
         {
-            CoffeList otherCoffeList = obj as CoffeList;
-            for (int i = 0; i < _coffe.Count; i++)
+            CoffeComponents otherCoffeList = obj as CoffeComponents;
+            for (int i = 0; i < _coffeComponents.Count; i++)
             {
-                if (_coffe[i] != otherCoffeList[i])
+                if (_coffeComponents[i] != otherCoffeList[i])
                     return false;
             }
             return true;
@@ -24,19 +41,24 @@ namespace Assets.Scripts.Food.Coffe_Machine
 
         public IEnumerator GetEnumerator()
         {
-            return _coffe.GetEnumerator();  
+            return _coffeComponents.GetEnumerator();  
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(_coffe);
+            int hash = 0;
+            foreach (var component in _coffeComponents)
+            {
+                hash+=component.GetHashCode();
+            }
+            return hash;
         }
 
         public CoffeComponent this[int index]
         {
             get
             {
-                return _coffe[index];
+                return _coffeComponents[index];
             }
         }
     }

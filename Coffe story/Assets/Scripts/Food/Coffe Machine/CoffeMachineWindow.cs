@@ -1,3 +1,4 @@
+using Assets.Scripts.Food.Coffe_Machine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,17 +18,15 @@ public class CoffeMachineWindow : MonoBehaviour
         _windowInteractionUI = coffeMachineWindow.GetComponent<SpriteRenderer>();
         _animator = coffeMachineWindow.GetComponent<Animator>();   
     }
-    public void SetPourMilkAnimation()
+    private Dictionary<CoffeComponent, string> _animationsTrigger = new Dictionary<CoffeComponent, string>()
     {
-        _animator.SetTrigger("PourMilk");
-    }
-    public void SetPourExpressoAnimation()
+        { CoffeComponent.Milk,"PourMilk"},
+        { CoffeComponent.Esspresso,"PourExpresso"},
+        { CoffeComponent.Water,"PourWater"},
+    };
+    public void SetPourAnimation(CoffeComponent component)
     {
-        _animator.SetTrigger("PourExpresso");
-    }
-    public void SetPourWaterAnimation()
-    {
-        _animator.SetTrigger("PourWater");
+        _animator.SetTrigger(_animationsTrigger[component]);
     }
 
 

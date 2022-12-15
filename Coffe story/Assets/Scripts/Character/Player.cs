@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public bool UseButtonIsPressed { get; private set; }
+    public bool IsHoldFood { get; set; }
     private InputController _inputController;
 
     private void Start()

@@ -8,6 +8,9 @@ TagManager:
   - Spot
   - CoffeMachineWindow
   - GoCoffeButton
+  - TakePointPlayer
+  - Stand
+  - GoAwayPoint
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Food
+  - FoodTray
   - 
   - 
   - 
@@ -45,8 +48,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 778036847
+    locked: 0
   - name: Food
     uniqueID: 2551447113
+    locked: 0
+  - name: Enviroment
+    uniqueID: 1503874995
+    locked: 0
+  - name: Order
+    uniqueID: 280791185
     locked: 0
   - name: Visitor
     uniqueID: 2493999217

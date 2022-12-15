@@ -4,7 +4,7 @@ using UnityEngine;
 public class VisitorOrderView : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _orderTablePrefabs= new List<GameObject>();
-    private Dictionary<Food, GameObject> _order = new Dictionary<Food, GameObject>();
+    private Dictionary<FoodType, GameObject> _order = new Dictionary<FoodType, GameObject>();
     public int FoodsCount
     {
         get { return _orderTablePrefabs.Count; }
@@ -17,10 +17,10 @@ public class VisitorOrderView : MonoBehaviour
     {
         for (int i = 0; i < _orderTablePrefabs.Count; i++)
         {
-            _order.Add((Food)i, _orderTablePrefabs[i]);
+            _order.Add((FoodType)i, _orderTablePrefabs[i]);
         } 
     }
-    public void ShowUIOrder(Food food)
+    public void ShowUIOrder(FoodType food)
     {
         InstantiateOrderTable(_order[food]);
     }

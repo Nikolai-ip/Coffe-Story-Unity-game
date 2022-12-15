@@ -1,39 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.Food.Coffe_Machine;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
-
 public class CoffeListTester
 {
     [Test]
     public void EqualTest()
     {
-        CoffeList coffeList = new CoffeList();
+        CoffeComponents coffeList = new CoffeComponents();
         coffeList.Add(CoffeComponent.Milk);
         coffeList.Add(CoffeComponent.Milk);
-        coffeList.Add(CoffeComponent.Expresso);
+        coffeList.Add(CoffeComponent.Esspresso);
 
-        CoffeList coffeList2 = new CoffeList();
+        CoffeComponents coffeList2 = new CoffeComponents();
         coffeList2.Add(CoffeComponent.Milk);
         coffeList2.Add(CoffeComponent.Milk);
-        coffeList2.Add(CoffeComponent.Expresso);
+        coffeList2.Add(CoffeComponent.Esspresso);
         Assert.AreEqual(coffeList,coffeList2);
     }
     [Test]
     public void NotEqualTest()
     {
-        CoffeList coffeList = new CoffeList();
-        coffeList.Add(CoffeComponent.Expresso);
+        CoffeComponents coffeList = new CoffeComponents();
+        coffeList.Add(CoffeComponent.Esspresso);
         coffeList.Add(CoffeComponent.Milk);
         coffeList.Add(CoffeComponent.Milk);
 
-        CoffeList coffeList2 = new CoffeList();
+        CoffeComponents coffeList2 = new CoffeComponents();
         coffeList2.Add(CoffeComponent.Milk);
         coffeList2.Add(CoffeComponent.Milk);
-        coffeList2.Add(CoffeComponent.Expresso);
+        coffeList2.Add(CoffeComponent.Esspresso);
         Assert.AreNotEqual(coffeList, coffeList2);
     }
 

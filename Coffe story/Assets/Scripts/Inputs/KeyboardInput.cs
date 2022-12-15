@@ -1,3 +1,4 @@
+using Assets.Scripts.Food.Coffe_Machine;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,37 +14,44 @@ public class KeyboardInput : InputController
         {KeyButton.PourWater, KeyCode.C },
         {KeyButton.Take, KeyCode.Space },
     };
-    [SerializeField]private bool _useButtonIsPressed = false;
-    [SerializeField] private bool _milkButtonIsPressed = false;
-    [SerializeField] private bool _expressoButtonIsPressed = false;
-    [SerializeField] private bool _waterButtonIsPressed = false;
-    [SerializeField] private bool _takeButtonIsPressed = false;
+    private bool _useButtonIsPressed;
+
+    private CoffeMachine _coffeMachine;
+    private void Start()
+    {
+        _coffeMachine = FindObjectOfType<CoffeMachine>();
+    }
 
     private void Update()
     {
         CheckTake();
-        CheckButtonIsPressed(KeyButton.UseCoffeMachine,ref _useButtonIsPressed);
-        CheckButtonIsPressed(KeyButton.PourMilk,ref _milkButtonIsPressed);
-        CheckButtonIsPressed(KeyButton.PourExpresso,ref _expressoButtonIsPressed);
-        CheckButtonIsPressed(KeyButton.PourWater,ref _waterButtonIsPressed);
-        CheckButtonIsPressed(KeyButton.Take, ref _takeButtonIsPressed);
+        CheckUseButtonIsPressed(KeyButton.UseCoffeMachine);
+        CheckPourComponentsButtonsIsPressed();
     }
+    private void CheckPourComponentsButtonsIsPressed()
+    {
+        if (ComponentsButtonsIsPressed())
+        {
+            _coffeMachine.PourCoffeComponent(_coffeComponentKeys[Input.inputString]);
+        }
+    }
+    private bool ComponentsButtonsIsPressed() => _coffeComponentKeys.ContainsKey(Input.inputString);
     private void CheckTake()
     {
         if (Input.GetKeyDown(_configurations[KeyButton.Take]))
         {
-            
+            _coffeMachine.CreateCoffe();
         }
     }
-    private void CheckButtonIsPressed(KeyButton keyButton,ref bool buttonIsPressed)
+    private void CheckUseButtonIsPressed(KeyButton keyButton)
     {
         if (Input.GetKeyDown(_configurations[keyButton]))
         {
-            buttonIsPressed = true;
+            _useButtonIsPressed = true;
         }
         if (Input.GetKeyUp(_configurations[keyButton]))
         {
-            buttonIsPressed = false;
+            _useButtonIsPressed = false;
         }
     }
     public override float GetX => Input.GetAxis("Horizontal");
@@ -52,11 +60,4 @@ public class KeyboardInput : InputController
 
     public override bool GetUseButtonIsPressed => _useButtonIsPressed;
 
-    public override bool IsPourMilkButtonPressed => _milkButtonIsPressed;
-
-    public override bool IsPourExpressoButtonPressed => _expressoButtonIsPressed;
-
-    public override bool IsPourWaterButtonPressed => _waterButtonIsPressed;
-
-    public override bool IsTakeButtonPressed => _takeButtonIsPressed;
 }
