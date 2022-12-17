@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd33913d51313c6468c5cebc2e465b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveDuration: 2
+  _moveDuration: 5
   _destroyTime: 4
 --- !u!114 &2903767136673577006
 MonoBehaviour:
@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c0f7ef5d3c85446ae8d51a56299632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sadSprite: {fileID: 21300000, guid: 4c961bd34e11ad44da70a1810ce44318, type: 3}
+  _happySprite: {fileID: 21300000, guid: 58e1e7149e0883f4482717809dfb47b3, type: 3}
 --- !u!1 &4008110890643137989
 GameObject:
   m_ObjectHideFlags: 0

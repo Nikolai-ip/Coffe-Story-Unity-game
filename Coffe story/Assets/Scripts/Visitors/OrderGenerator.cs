@@ -6,6 +6,7 @@ public class OrderGenerator
     {
         return (FoodType)(new Random().Next(0, foodsCount));
     }
+
     public FoodType GetCertain(int foodIndex)
     {
         return (FoodType)foodIndex;

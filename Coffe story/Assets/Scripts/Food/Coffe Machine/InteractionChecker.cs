@@ -7,6 +7,7 @@ public class InteractionChecker : MonoBehaviour
     private CameraController _cameraController;
     [SerializeField] private GameObject _fButtonUI;
     [SerializeField] private bool _coffeMachineIsUsed = false;
+
     private void Start()
     {
         _coffeMachine = GetComponent<CoffeMachine>();
@@ -14,9 +15,10 @@ public class InteractionChecker : MonoBehaviour
         _cameraController = FindObjectOfType<CameraController>();
         _fButtonUI.SetActive(false);
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out FloorCharacter playerTriggerPoint))
+        if (collision.TryGetComponent(out FloorCharacter playerTriggerPoint) && !_player.IsHoldFood)
         {
             _fButtonUI.SetActive(true);
             if (_player.UseButtonIsPressed)
@@ -27,6 +29,7 @@ public class InteractionChecker : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out FloorCharacter playerTriggerPoint))
@@ -38,8 +41,6 @@ public class InteractionChecker : MonoBehaviour
                 _coffeMachine.EndCooking();
                 _coffeMachineIsUsed = false;
             }
-
-
         }
     }
 }

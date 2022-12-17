@@ -1,17 +1,17 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class QueueController : MonoBehaviour
 {
     [SerializeField] private List<VisitorMoveController> _visitors = new List<VisitorMoveController>();
     [SerializeField] private List<Spot> _spots = new List<Spot>();
+
     private void Start()
     {
         InitSpots();
     }
+
     private void InitSpots()
     {
         foreach (var spot in FindObjectsOfType<Spot>())
@@ -20,6 +20,7 @@ public class QueueController : MonoBehaviour
         }
         _spots.Reverse();
     }
+
     private void Update()
     {
         try
@@ -31,6 +32,7 @@ public class QueueController : MonoBehaviour
             Debug.LogError(e.Message);
         }
     }
+
     private void SetMoveSpotVisitor()
     {
         Spot freeSpot = FindFreeSpot();
@@ -44,17 +46,18 @@ public class QueueController : MonoBehaviour
                 visitor.StartMoveToSpot();
             }
         }
-        
     }
+
     private Spot FindFreeSpot()
     {
-        for (int i = _spots.Count-1; i >= 0; i--)
+        for (int i = _spots.Count - 1; i >= 0; i--)
         {
             if (!_spots[i].IsBusy)
                 return _spots[i];
         }
         return null;
     }
+
     public void Add(VisitorMoveController visitor)
     {
         _visitors.Add(visitor);

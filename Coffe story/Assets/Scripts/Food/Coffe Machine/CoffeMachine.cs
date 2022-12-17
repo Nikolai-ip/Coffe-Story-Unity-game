@@ -1,7 +1,5 @@
 using Assets.Scripts.Food.Coffe_Machine;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoffeMachine : MonoBehaviour
@@ -17,15 +15,16 @@ public class CoffeMachine : MonoBehaviour
     {
         _window = GetComponent<CoffeMachineWindow>();
     }
-    public void PourCoffeComponent(CoffeComponent component)
+
+    public void PourCoffeComponent(CoffeComponentType component)
     {
         if (_coffeMachinIsUsing)
         {
             _coffeComponents.Add(component);
             _window.SetPourAnimation(component);
         }
-
     }
+
     public void CreateCoffe()
     {
         try
@@ -36,8 +35,8 @@ public class CoffeMachine : MonoBehaviour
         {
             Debug.LogError(e);
         }
-
     }
+
     private void TryToCreateCoffe()
     {
         if (_coffeMachinIsUsing)
@@ -54,6 +53,7 @@ public class CoffeMachine : MonoBehaviour
         _coffeMachinIsUsing = true;
         _window.AppearenceCoffeMachineWindow();
     }
+
     public void EndCooking()
     {
         if (_coffeMachinIsUsing)
@@ -62,5 +62,4 @@ public class CoffeMachine : MonoBehaviour
         }
         _coffeMachinIsUsing = false;
     }
-   
 }

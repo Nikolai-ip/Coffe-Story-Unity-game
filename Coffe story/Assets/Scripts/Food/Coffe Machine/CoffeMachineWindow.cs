@@ -8,32 +8,34 @@ public class CoffeMachineWindow : MonoBehaviour
     private SpriteRenderer _windowInteractionUI;
     private SpriteRenderer _goCoffeButtonUI;
 
-    [SerializeField] float timeForAppearenceWindow = 1f;
+    [SerializeField] private float timeForAppearenceWindow = 1f;
     private Animator _animator;
+
     private void Start()
     {
-        
         var coffeMachineWindow = GameObject.FindGameObjectWithTag("CoffeMachineWindow");
         _goCoffeButtonUI = GameObject.FindGameObjectWithTag("GoCoffeButton").GetComponent<SpriteRenderer>();
         _windowInteractionUI = coffeMachineWindow.GetComponent<SpriteRenderer>();
-        _animator = coffeMachineWindow.GetComponent<Animator>();   
+        _animator = coffeMachineWindow.GetComponent<Animator>();
     }
-    private Dictionary<CoffeComponent, string> _animationsTrigger = new Dictionary<CoffeComponent, string>()
+
+    private Dictionary<CoffeComponentType, string> _animationsTrigger = new Dictionary<CoffeComponentType, string>()
     {
-        { CoffeComponent.Milk,"PourMilk"},
-        { CoffeComponent.Esspresso,"PourExpresso"},
-        { CoffeComponent.Water,"PourWater"},
+        { CoffeComponentType.Milk,"PourMilk"},
+        { CoffeComponentType.Esspresso,"PourExpresso"},
+        { CoffeComponentType.Water,"PourWater"},
     };
-    public void SetPourAnimation(CoffeComponent component)
+
+    public void SetPourAnimation(CoffeComponentType component)
     {
         _animator.SetTrigger(_animationsTrigger[component]);
     }
-
 
     public void AppearenceCoffeMachineWindow()
     {
         StartCoroutine(AppearenceWindow());
     }
+
     private IEnumerator AppearenceWindow()
     {
         float time = 0;
@@ -45,10 +47,12 @@ public class CoffeMachineWindow : MonoBehaviour
             yield return null;
         }
     }
+
     public void CloseCoffeMachineWindow()
     {
         StartCoroutine(CloseWindow());
     }
+
     private IEnumerator CloseWindow()
     {
         float time = 0;

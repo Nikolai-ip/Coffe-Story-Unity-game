@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Food : MonoBehaviour
@@ -10,6 +9,7 @@ public abstract class Food : MonoBehaviour
     {
         StartCoroutine(DestroyFood(timeToDestroyFood));
     }
+
     private IEnumerator DestroyFood(int timeToDestroyFood)
     {
         float time = 0;
@@ -19,6 +19,5 @@ public abstract class Food : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
-
     }
 }

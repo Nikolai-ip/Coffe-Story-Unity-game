@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     {
         _inputController = GetComponent<InputController>();
     }
+
     private void Update()
     {
         UseButtonIsPressed = _inputController.GetUseButtonIsPressed;

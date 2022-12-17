@@ -1,4 +1,3 @@
-using Assets.Scripts.Food.Coffe_Machine;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,9 +13,11 @@ public class KeyboardInput : InputController
         {KeyButton.PourWater, KeyCode.C },
         {KeyButton.Take, KeyCode.Space },
     };
+
     private bool _useButtonIsPressed;
 
     private CoffeMachine _coffeMachine;
+
     private void Start()
     {
         _coffeMachine = FindObjectOfType<CoffeMachine>();
@@ -28,6 +29,7 @@ public class KeyboardInput : InputController
         CheckUseButtonIsPressed(KeyButton.UseCoffeMachine);
         CheckPourComponentsButtonsIsPressed();
     }
+
     private void CheckPourComponentsButtonsIsPressed()
     {
         if (ComponentsButtonsIsPressed())
@@ -35,7 +37,9 @@ public class KeyboardInput : InputController
             _coffeMachine.PourCoffeComponent(_coffeComponentKeys[Input.inputString]);
         }
     }
+
     private bool ComponentsButtonsIsPressed() => _coffeComponentKeys.ContainsKey(Input.inputString);
+
     private void CheckTake()
     {
         if (Input.GetKeyDown(_configurations[KeyButton.Take]))
@@ -43,6 +47,7 @@ public class KeyboardInput : InputController
             _coffeMachine.CreateCoffe();
         }
     }
+
     private void CheckUseButtonIsPressed(KeyButton keyButton)
     {
         if (Input.GetKeyDown(_configurations[keyButton]))
@@ -54,10 +59,10 @@ public class KeyboardInput : InputController
             _useButtonIsPressed = false;
         }
     }
+
     public override float GetX => Input.GetAxis("Horizontal");
 
     public override float GetY => Input.GetAxis("Vertical");
 
     public override bool GetUseButtonIsPressed => _useButtonIsPressed;
-
 }

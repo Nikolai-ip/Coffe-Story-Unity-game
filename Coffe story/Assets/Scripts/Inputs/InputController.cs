@@ -12,14 +12,15 @@ public abstract class InputController : MonoBehaviour
         PourExpresso,
         PourWater,
         Take,
-
     }
-    protected Dictionary<string, CoffeComponent> _coffeComponentKeys = new Dictionary<string, CoffeComponent>()
+
+    protected Dictionary<string, CoffeComponentType> _coffeComponentKeys = new Dictionary<string, CoffeComponentType>()
     {
-        {"1",CoffeComponent.Milk },
-        {"2",CoffeComponent.Esspresso },
-        {"3",CoffeComponent.Water },
+        {"1",CoffeComponentType.Milk },
+        {"2",CoffeComponentType.Esspresso },
+        {"3",CoffeComponentType.Water },
     };
+
     public abstract float GetX { get; }
     public abstract float GetY { get; }
     public abstract bool GetUseButtonIsPressed { get; }
