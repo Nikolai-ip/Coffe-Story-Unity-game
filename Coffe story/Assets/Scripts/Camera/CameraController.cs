@@ -5,27 +5,29 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Camera _camera;
+    private CameraFollow _cameraFollow;
     [SerializeField] private float _smooth;
     private float _originalSize;
-
     private void Start()
     {
         _camera = GetComponent<Camera>();
         _originalSize = _camera.orthographicSize;
+        _cameraFollow = GetComponent<CameraFollow>();
     }
 
     public void IncreaseCamera(float size)
     {
         try
         {
+            _cameraFollow.isFollowForPlayer = false;
             StartCoroutine(Increase(size));
+
         }
         catch (Exception e)
         {
             Debug.LogException(e);
         }
     }
-
     private IEnumerator Increase(float size)
     {
         float time = 0;
@@ -37,18 +39,19 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void ExpandToOriginalSize()
+    public void ExpandToOriginalValues()
     {
         try
         {
+            _cameraFollow.isFollowForPlayer = true;
             StartCoroutine(Expand());
+
         }
         catch (Exception e)
         {
             Debug.LogException(e);
         }
     }
-
     private IEnumerator Expand()
     {
         float time = 0;

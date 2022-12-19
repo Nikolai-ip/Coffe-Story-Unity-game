@@ -7,7 +7,7 @@ public class InteractionChecker : MonoBehaviour
     private CameraController _cameraController;
     [SerializeField] private GameObject _fButtonUI;
     [SerializeField] private bool _coffeMachineIsUsed = false;
-
+    [SerializeField] private float _increaseCameraValue;
     private void Start()
     {
         _coffeMachine = GetComponent<CoffeMachine>();
@@ -24,7 +24,7 @@ public class InteractionChecker : MonoBehaviour
             if (_player.UseButtonIsPressed)
             {
                 _coffeMachineIsUsed = true;
-                _cameraController.IncreaseCamera(5.5f);
+                _cameraController.IncreaseCamera(_increaseCameraValue);
                 _coffeMachine.StartCooking();
             }
         }
@@ -37,7 +37,7 @@ public class InteractionChecker : MonoBehaviour
             _fButtonUI.SetActive(false);
             if (_coffeMachineIsUsed)
             {
-                _cameraController.ExpandToOriginalSize();
+                _cameraController.ExpandToOriginalValues();
                 _coffeMachine.EndCooking();
                 _coffeMachineIsUsed = false;
             }
